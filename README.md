@@ -41,9 +41,11 @@ data-type attribute
 
 data-type possible values:
 
-	optional - wont be validated
-	numeric - numbers only
-	email - validates input value for email 
+	'optional' - wont be validated
+	'numeric' - numbers only
+	'email' - validates input value for email 
+	
+if <input> data-type is not set, it will be valid only if value is not epmpy.
 	
 data-match attribute
 //example: <input data-match="1" type="password">
