@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>Ajax form plugin</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="ajaxForm.js"></script>
+	<style>
+		* {margin: 0;padding: 0;}
+		header, nav, section, article, aside, footer {display: block;}
+		body {font: 14px/16px Arial, Tahoma;color:#000;}
+		a {color: blue;outline: none;text-decoration: underline;}
+		a:hover {text-decoration: none;}
+		textarea, select, input {vertical-align: middle;font: 14px/16px Helvetica, Arial, Tahoma, Verdana, sans-serif;}
+		/* Form */
+		form {margin:50px;}
+		form label {display:block;}
+		form label.text {padding:5px 0;clear:both;}
+		form label.text > span {display:block;padding-bottom:5px;}
+		form label.text textarea,
+		form label.text input {border:solid 1px #999;height:20px;width:300px;padding:5px;background:#fff;}
+		form label.text select {width:310px;padding:5px;border:solid 1px #999;}
+		form label.text textarea {height:100px;}
+		form label.cb {padding:5px 0 0;clear:both;line-height:20px;}
+		form label.cb input {position:relative;top:-2px;}
+		/* Errors styles */
+		form label.error,
+		form label.text.error select,
+		form label.text.error input {border-color:red;color:red;}
+	</style>
+	<script>
+		/***** ajaxForm ***** EXAMPLE OF USE ****** */
+		$(document).ready(function(){
+			$('#register').ajaxForm({
+				//validate: false,
+				//fields: 'input[type=text]',
+				onSuccess: function(data){
+					alert('Form submitted!');
+				},
+				onValidationError: function(data){
+					alert('some fields are not valid');
+				},
+				onError: function(data){
+					alert('oops... something is wrong');
+				},
+				beforeSubmit: function(){
+					alert('you area about to send your data...');
+				},
+			});
+		})
+		/******* EXAMPLE OF USE ***/
+	</script>
+</head>
+<body>
+	<form id="register" action="/save/" method="post">
+		<div>
+			<label class="text">
+				<span>Your name</span>
+				<input type="text" name="user_name" value=""/>
+			</label>
+			<label class="text">
+				<span>E-mail</span>
+				<input type="text" name="user_email" data-type="email" value=""/>
+			</label>
+			<label class="text">
+				<span>Phone</span>
+				<input type="text" name="user_phone" data-type="numeric"/>
+			</label>
+			<label class="text">
+				<span>Region</span>
+				<select name="Region">
+					<option value="">-- select -- </option>
+					<option value="US">United States</option>
+					<option value="EU">European Union</option>
+				</select>
+			</label>
+			<label class="text">
+				<span>Password</span>
+				<input type="password" name="user_phone" data-match="1"/>
+			</label>
+			<label class="text">
+				<span>Password again</span>
+				<input type="password" name="user_phone" data-match="1"/>
+			</label>
+			<label class="text">
+				<span>About yourself (optional)</span>
+				<textarea type="password" class="text" name="user_phone" data-type="optional"></textarea>
+			</label>
+			<label class="cb">
+				<input type="checkbox" name="user_tos" value="on"/>
+				<span>Agree with <a href="#n" onclick="return false;">ters and conditions</a>.</span>
+			</label>
+			<label class="cb">
+				<input type="checkbox" data-type="optional" name="user_subscribe" value="on"/>
+				<span>Subscribe to newsletter</span>
+			</label>
+			<label class="cb">
+				<input type="checkbox" data-type="optional" name="user_facebook" value="on"/>
+				<span>Subscribe to facebook news</span>
+			</label>
+			<div class="footer">
+				<br/><br/>
+				<input type="submit" value="Submit">
+			</div>
+		</div>
+	</form>
+</body>
+</html>
