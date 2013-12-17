@@ -2,6 +2,9 @@ jQuery ajaxForm
 ================================
 Makes submitting forms with ajax much easyer, and less code. With build-in light validation.
 
+jsfiddle example:
+http://jsfiddle.net/acrashik/akjxM/
+
 
 bindingForm
 ================================
