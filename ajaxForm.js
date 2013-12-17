@@ -89,7 +89,7 @@ jQuery.fn.ajaxForm = function(settings) {
 				if (typeof set.onSuccess == 'function') set.onSuccess(data);
 				form.data('processing',false);
 			},
-			error: function(e){
+			error: function(data){
 				if (typeof set.onError == 'function') set.onError(data);
 				form.data('processing',false);
 			}
