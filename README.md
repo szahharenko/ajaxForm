@@ -82,10 +82,7 @@ If you use default options, here are some attributes:
     'numeric' - numbers only
     'email' - validates input value for email 
 
-**in case of no data-type attribute **
-
-    validations only check for empty value
-    if (input.value == '') //validation failed
+in case of no data-type attribute not set validations will still check input for empty value, and will fail if it is empty.
     
 **password validation**
 
