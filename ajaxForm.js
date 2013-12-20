@@ -1,3 +1,13 @@
+/*
+ * jQuery ajaxForm Plugin
+ * https://github.com/szahharenko/ajaxForm
+ * author: Sergei Zahharenko
+ * code-essence.eu
+
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.opensource.org/licenses/GPL-2.0
+**/
 jQuery.fn.ajaxForm = function(settings) {
 	var form = $(this);
 	function formValidate(fields) {
