@@ -14,25 +14,34 @@ $('#id').ajaxForm();
 list of options and defaults
 ================================
 
-	validate: bool
-	//default true, switch on/off form validation
-	
-	fields: 'selector'
-	//default 'input:not(:hidden):not([data-type=optional]),textarea:not(:hidden):not([data-type=optional]),select:not([data-type=optional])'
-	//selector for fileds going to be validated
-	
-	onValidationError: function
-	//triggered if some fields are not valid
-	
-	beforeSubmit: function
-	//something to trigger before submiting from
-	
-	onSuccess: function(data) 
-	//form submitted, data - is server responce
-	
-	onError: function(data)
-	//failed to submit form with ajax
 
+**validate: bool**
+
+    default true,
+    * switch on/off form validation
+
+**fields: 'selector'**
+
+    default 'input:not(:hidden):not([data-type=optional]),textarea:not(:hidden):not([data-type=optional]),select:not([data-type=optional])'
+    * selector for fileds going to be validated
+
+
+**onValidationError: function**	
+
+    triggered if some fields are not valid
+
+
+**beforeSubmit: function**	
+
+    function to trigger before submiting from and after validation passed
+
+**onSuccess: function(data)**	
+
+    form submitted, responce data can be used.
+
+**onError: function(data)**	
+
+    failed to submit form with ajax
 
 
 fields validation markup
