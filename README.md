@@ -98,6 +98,12 @@ validation errors
 in case of not valid value, script will mark input which is not valid.
 invalid input and it's parent will both have class - error
 
+**EXAMPLE**
+
+    <label class="error"> Email
+        <input type="text" name="user_email" id="email" data-type="email" class="error" value=""/>
+    </label>
+
 error class will vanish on focus of this input.
 
 Simple case
