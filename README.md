@@ -99,6 +99,8 @@ If you use default options, here are some attributes:
 Simple case
 ================================    
 
+This form on submit will be submitted with ajax, and only email input will be validated, as soon as fields parameter set to '#email', rest inputs can be blank
+
 **HTML**
 
     <form action="/save/" method="post">
