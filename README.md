@@ -95,4 +95,32 @@ If you use default options, here are some attributes:
 
     <input data-match="1" type="password" name="pass">
     <input data-match="1" type="password" name="pass_repeat">
-    
+
+Simple case
+================================    
+
+**HTML**
+
+    <form action="/save/" method="post">
+        <label> Your name
+            <input type="text" name="user_name" value=""/>
+        </label>
+        <label> Email
+            <input type="text" name="user_email" id="email" data-type="email" value=""/>
+        </label>
+        <label> Comment
+            <textarea name="user_comment"></textarea>
+        </label>        
+        <input type="submit" value="Submit">
+    </form>
+
+**JS**
+
+    $(document).ready(function(){
+        $('#register').ajaxForm({
+            fields: '#email',
+            onSuccess: function(){
+                window.location.reload(true)
+            }
+        });
+    })
