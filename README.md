@@ -65,20 +65,34 @@ list of options and defaults
 
 fields validation markup
 ================================
-If you use default fields options, here are some tricks:
+If you use default options, here are some attributes:
 
-data-type attribute
-//example: <input data-type="optional">
+**Default init**
 
-data-type possible values:
+    $('form').ajaxForm()
 
-	'optional' - wont be validated
-	'numeric' - numbers only
-	'email' - validates input value for email 
-	
-if <input> data-type is not set, it will be valid only if value is not empty.
-	
-data-match attribute
-//example: <input data-match="1" type="password">
-//value 1 is number of matching set.
-//compare same set values to be identical
+**data-type**
+
+    data-type attribute
+    <input data-type="optional">
+
+**data-type value**
+
+    'optional' - wont be validated
+    'numeric' - numbers only
+    'email' - validates input value for email 
+
+**in case of no data-type attribute **
+
+    validations only check for empty value
+    if (input.value == '') //validation failed
+    
+**password validation**
+
+    data-match attribute
+    
+**password markup example**
+
+    <input data-match="1" type="password" name="pass">
+    <input data-match="1" type="password" name="pass_repeat">
+    
