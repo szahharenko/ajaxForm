@@ -42,6 +42,25 @@ list of options and defaults
 **onError: function(data)**	
 
     failed to submit form with ajax
+    
+**EXAMPLE**
+
+    $('form').ajaxForm({
+        validate: true,
+        fields: '.mandatory',
+        onSuccess: function(data){
+            alert('Form submitted!');
+        },
+        onValidationError: function(data){
+            alert('some fields are not valid');
+        },
+        onError: function(data){
+            alert('oops... something is wrong');
+        },
+        beforeSubmit: function(){
+            alert('you area about to send your data...');
+        },
+    });    
 
 
 fields validation markup
